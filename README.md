@@ -1,3 +1,3 @@
 # Spectral-clustering
 todo
-treba samo jebat jebat jebat
+samo jebat jebat jebat
