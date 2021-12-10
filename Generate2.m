@@ -6,8 +6,8 @@ function dots = Generate2(m, rk, ck)
   
   dots = zeros(2, m*rk*ck);
   a = 1;
-  b1 = 10;
-  b2 = 10;
+  b1 = 2;
+  b2 = 2;
   
   for i = 1 : rk
     for j = 1 : ck

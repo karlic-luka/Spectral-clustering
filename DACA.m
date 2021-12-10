@@ -8,7 +8,7 @@ function X = DACA(W, k, knn)
     W_z = getW_z(W, knn);
 
     W_kapa = W .* W_z;
-    %imagesc(W_z), colorbar;
+    % imagesc(W_z), colorbar
 
     D_kapa = diag(W * ones(n, 1));
     

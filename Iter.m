@@ -12,7 +12,7 @@ function X_z = Iter(X_tz, n, K)
     
   % korak 5
   phi_cz = 0;
-  maxit = 100;
+  maxit = 1000;
    
   % koraci 6 - 8
   for iter = 1 : maxit
@@ -27,7 +27,8 @@ function X_z = Iter(X_tz, n, K)
      [U, omega, U_t] = svd(X_z' * X_tz);
      phi_c = trace(omega);
      if abs(phi_c - phi_cz) < eps  % masinski epsilon
-       break;
+         disp(sprintf('.. Converged after %d iters', iter))
+         break;
      end
      phi_cz = phi_c;
      R = U_t * U'; 
