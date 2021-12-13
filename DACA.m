@@ -36,6 +36,7 @@ function X = DACA(W, k, knn)
     %
     % X_t = diag(diag(P_t * P_t')) ^ (-0.5) * P_t;
        
+    
     row_norms = diag(P_t * P_t');
     row_norms(row_norms < 1e-16) = 1;
     X_t = diag(row_norms) ^ -0.5 * P_t;
