@@ -1,9 +1,17 @@
-function [W] = ImageDist(A, sigma, radius)
+function [W] = ImageDist(A, sigma, radius, improvement)
   [h, w, ~] = size(A);
   
   n = h*w;
   
   B = A;%rgb2lab(A);
+  
+  if improvement > 0
+      B = rgb2lab(A);
+      B(:, :, 1) = B(:, :, 1) / 100;
+      B(:, :, 2) = B(:, :, 2) / 256 + 0.5;
+      B(:, :, 1) = B(:, :, 1) / 256 + 0.5;
+  end
+  
   B = double(reshape(B, [] ,3));
 
   B = B ./ 255;
