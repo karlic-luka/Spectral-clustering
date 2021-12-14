@@ -3,8 +3,13 @@ function W_z = getW_z(W, k)
     W_z = zeros(n);
    
     for i = 1 : n
-        [~, I] = sort(W(i,:), 'descend');           
-        W_z(i, I(1:k)) = 1;
+        temp = W(i, :);
+        mini = min(temp);
+        indx = find(temp > mini);
+        not_mini = temp(indx);
+        
+        [~, I] = sort(not_mini, 'descend');
+        W_z( i, indx( I(1:k)) ) = 1;
     end
     
     W_z = W_z | W_z';

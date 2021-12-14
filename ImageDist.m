@@ -7,10 +7,8 @@ function [W] = ImageDist(A, sigma, radius, improvement)
   
     if improvement > 0
         % better color space
-        B = rgb2lab(A);
-        B(:, :, 1) = B(:, :, 1) ./ 100;
-        B(:, :, 2) = B(:, :, 2) ./ 256 + 0.5;
-        B(:, :, 3) = B(:, :, 3) ./ 256 + 0.5;
+        B = rgb2oklab(A);
+        B(:, :, 1) = B(:, :, 1) ./ 2;
     else
         B = B ./ 256;    
     end
@@ -33,13 +31,15 @@ function [W] = ImageDist(A, sigma, radius, improvement)
     for i = 1 : n
         for x = 0 : radius
             for y = 0 : radius
-                if (abs(x) + abs(y) > radius)
+                if (x^2 + y^2 > radius^2)
                     continue
                 end
                 
                 j = i + x + y * w;
                 if (j <= n)
-                    W(i,j) = exp(-0.5 * norm(B(i, 1:3)-B(j, 1:3), 2)^2 / sigma^2);
+                    
+                    distance = norm(B(i, 1:3)-B(j, 1:3), 2);
+                    W(i,j) = exp(-0.5 * distance^2 / sigma^2);
                     W(j,i) = W(i,j);
                 end
             end
