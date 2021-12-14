@@ -33,7 +33,7 @@ function [W] = ImageDist(A, sigma, radius, improvement)
     for i = 1 : n
         for x = 0 : radius
             for y = 0 : radius
-                if (abs(x) + abs(y) > radius)
+                if (x**2 + y**2 >= radius**2)
                     continue
                 end
                 
