@@ -16,7 +16,7 @@ A = imread('kanye_small.png'); W = ImageDist(A, 10, 10, 1); imagesc(W)
 
 X = DACA(W, 5, 7); DrawImg(X, A, "DACA");
 
-#### 2)
+#### 2) bolji
 A = imread('kanye_small.png'); W = ImageDist(A, 10, 15, 1); imagesc(W)
 
 X = DACA(W, 7, 10); DrawImg(X, A, "DACA");
