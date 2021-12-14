@@ -1,0 +1,6 @@
+prijedlozi za ubaciti u seminar:
+1. msc ne radi na kruznom primjeru, a DACA RADI! kontraprimjer 
+2. pokazati algoritam u ovisnosti o hiperparametrima
+3. mozda probati dati svoje misljenje zasto variranjem sigme msc na kruznom primjeru boja
+cirkularno
+4. todo
