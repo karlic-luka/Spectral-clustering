@@ -1,6 +1,6 @@
 function X_z = Iter(X_tz, n, K)
 
-    disp(sprintf('Started Iter.m'))
+    disp(sprintf('..Started Iter.m'))
     % korak 4
     i = randi(n); 
     R(:,1) = X_tz(i, 1:K)'; 
