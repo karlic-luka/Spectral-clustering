@@ -11,10 +11,12 @@ k = 8; sigma = 3; knn = 60; A = Generate3(70, 3, 3); W = Dist(A, sigma); X = DAC
 
 
 ### small kanye
+#### 1)
 A = imread('kanye_small.png'); W = ImageDist(A, 10, 10, 1); imagesc(W)
+
 X = DACA(W, 5, 7); DrawImg(X, A, "DACA");
 
-
+#### 2)
 A = imread('kanye_small.png'); W = ImageDist(A, 10, 15, 1); imagesc(W)
 
 X = DACA(W, 7, 10); DrawImg(X, A, "DACA");
