@@ -5,7 +5,7 @@ function dots = Generate4(N, r1, r2)
   %sigma = 0.7; k = 2; knn = 10;
 
   size(r1*[cos(theta), sin(theta)])
-  dots = [r1*[cos(theta),sin(theta)]+ rand(N,1); r2*[cos(theta),sin(theta)]+ rand(N,1)]';
+  dots = [r1*[cos(theta), sin(theta)]+ rand(N,1); r2*[cos(theta), sin(theta)]+ rand(N,1)]';
   size(dots)
   %dots(2,:) = r2*[cos(theta),sin(theta)]+ rand(N,1);
 
