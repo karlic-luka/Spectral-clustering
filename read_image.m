@@ -1,12 +1,12 @@
-function I = read_image(file_name, rows, cols)
+function I = read_image(file_name, rows)
  
-I = imread(file_name);
+I = imread(file_name); %rgb
 [h, w, channels] = size(I);
 
-if (channels > 1)
-    I = double(rgb2gray(I));
-else
-    I = double(I);
-end
+%if (channels > 1)
+%    I = double(rgb2gray(I));
+%else
+%    I = double(I);
+%end
 
-I = imresize(I, [rows, cols], 'bicubic');
+I = imresize(I, [rows NaN], 'bicubic');

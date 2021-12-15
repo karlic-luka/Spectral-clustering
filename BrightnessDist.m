@@ -1,12 +1,12 @@
-function W = BrightnessDist(A, sigmaf, sigmax, radius)
+function W = BrightnessDist(image, sigmaf, sigmax, radius)
   
-  [h, w, ~] = size(A);
-    
-  image = image ./ 255;
-%  size(image)
-%  imagesc(image); colormap(gray);
+  [h, w, channels] = size(image);
+  if channels > 1
+   image = double(rgb2gray(image));
+  
   n = h*w;
   image = reshape(image, n, 1);
+%  image = double(image) ./ 255;
 %    
   W = zeros(n);
 %  
@@ -21,7 +21,8 @@ function W = BrightnessDist(A, sigmaf, sigmax, radius)
         j = i + x + y * w;
         if (j <= n)
             xpart = d / (sigmax**2);
-            fpart = norm(image(i)-image(j), 2)^2 / (sigmaf^2); %potencijalno sam retardiran
+%            fpart = 0;
+            fpart = norm(image(i)-image(j), 2)^2 / (sigmaf^2);
             W(i,j) = exp(-0.5*fpart - 0.5*xpart);
             W(j,i) = W(i,j);
         end
