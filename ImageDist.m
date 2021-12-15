@@ -5,14 +5,19 @@ function [W] = ImageDist(A, sigma, radius, improvement)
 
     B = A;
   
-    if improvement >= 1
+    if improvement == 1
         % better color space
         B = rgb2oklab(A);
-        B(:, 1) = B(:, 1) / 2;
-        %B = normalize(rgb2oklab(A), 'range');
-        
+        % B(:, 1) = B(:, 1) / 3;
+        % B = normalize(rgb2oklab(A), 'range');
+    elseif improvement == 2
+        % grayscale
+        B = double(rgb2gray(A)) .* 3 ./ 255; % skaliranje da sigma ostane u mjerilu
+        B(:, :, 2) = 0;
+        B(:, :, 3) = 0;
     else
-        B = B ./ 256;    
+        % rgb
+        B = double(B) ./ 256;    
     end
     
     B = double(reshape(B, [] ,3));

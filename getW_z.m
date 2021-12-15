@@ -7,8 +7,8 @@ function W_z = getW_z(W, k)
         mini = min(temp);
         indx = find(temp > mini);
         not_mini = temp(indx);
-        
         [~, I] = sort(not_mini, 'descend');
+                
         W_z( i, indx( I(1:k)) ) = 1;
 
     end

@@ -16,6 +16,8 @@ function [] = DrawImg(X, A, s)
  
   cmap = hsv(k);
   
-  imshow(reshape(cmap(X, :), h, w, 3))
+  imshow(reshape(cmap(X, :), h, w, 3));
+  title(s);
+  drawnow;
 
 end
