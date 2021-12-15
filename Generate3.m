@@ -5,9 +5,9 @@ function dots = Generate3(m, rk, ck)
   % ck = broj stupaca clustera
   
   dots = zeros(2, m*(rk*ck-1)+1);
-  a = 0.75; % razmjer toèaka istog clustera
-  b1 = 5; % približna vodoravna udaljenost izmeðu razlièitih clustera toèaka
-  b2 = 5; % približna okomita udaljenost izmeðu razlièitih clustera toèaka
+  a = 0.7; % razmjer toèaka istog clustera
+  b1 = 3; % približna vodoravna udaljenost izmeðu razlièitih clustera toèaka
+  b2 = 3; % približna okomita udaljenost izmeðu razlièitih clustera toèaka
   
   for i = 1 : rk
     for j = 1 : ck
