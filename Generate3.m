@@ -1,13 +1,13 @@
 function dots = Generate3(m, rk, ck)
   
-  % m = broj tocaka u clusteru
-  % rk = broj redoaka clustera
+  % m = broj toèaka u clusteru
+  % rk = broj redaka clustera
   % ck = broj stupaca clustera
   
   dots = zeros(2, m*(rk*ck-1)+1);
-  a = 1;
-  b1 = 10;
-  b2 = 10;
+  a = 0.7; % razmjer toèaka istog clustera
+  b1 = 3; % približna vodoravna udaljenost izmeðu razlièitih clustera toèaka
+  b2 = 3; % približna okomita udaljenost izmeðu razlièitih clustera toèaka
   
   for i = 1 : rk
     for j = 1 : ck
@@ -21,8 +21,9 @@ function dots = Generate3(m, rk, ck)
     end
   end
   
-  dots = dots(:, randperm(m*(rk*ck-1)+1));
+  dots = dots(:, randperm(m*(rk*ck-1)+1)); % nasumièna permutacija toèaka
   
   %figure();
   %plot(dots(1,:), dots(2,:), 'x');
+  
 end
