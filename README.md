@@ -1,22 +1,52 @@
-# Spectral-clustering
+# Multiclass spectral clustering
+### K. Grozdanić, M. Jelašić, L. Karlić
+
+![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)
+
+Naša implementacija problema multiklasnog spektralnog klasteriranja, MATLAB.
+
+## Features
+
+- Računanje matrice težina za problem 2d točaka ili slika
+- Algoritami: n-cut i DACA
+- Prikaz završnih klustera
 
 
-## Pozivi funkcija
 
-k = 9; A = Generate2(20, 3, 3); W = Dist(A, k); X = MSC(W, k); Draw(X, A, "MSC");
+> Just because you can do something, doesn’t mean 
+> it’s a good use of anyone’s time. We humans fall 
+> in love with what we have poured effort into… 
+> even if it is a pile of poisonous rubbish.
 
-k = 9; A = Generate2(20, 3, 3); W = Dist(A, k); X = DACA(W, k, 15); Draw(X, A, "DACA");
+## Instalacija
 
-k = 8; sigma = 3; knn = 60; A = Generate3(70, 3, 3); W = Dist(A, sigma); X = DACA(W, k, 30); Draw(X, A, "DACA");
+Za korištenje OKLab color space-a potrebno je pokrenuti:
+
+Matlab:
+```sh
+installGPT
+```
+Octave:
+```sh
+addpath(strjoin(strcat(['/Users/ajx/Repos/gptoolbox/'],{'external','imageprocessing', 'images', 'matrix', 'mesh', 'mex', 'quat','utility','wrappers'}),':'))
+```
+Pogledati: https://github.com/alecjacobson/gptoolbox
 
 
-### small kanye
-#### 1)
-A = imread('kanye_small.png'); W = ImageDist(A, 10, 10, 1); imagesc(W)
 
-X = DACA(W, 5, 7); DrawImg(X, A, "DACA");
+For production environments...
 
-#### 2) bolji
-A = imread('kanye_small.png'); W = ImageDist(A, 10, 15, 1); imagesc(W)
+## Pokretanje
+### 2d primjeri:
+```sh
+primjer
+```
 
-X = DACA(W, 7, 10); DrawImg(X, A, "DACA");
+### primjeri slika
+```sh
+primjer_slike
+```
+
+
+## License
+MIT
